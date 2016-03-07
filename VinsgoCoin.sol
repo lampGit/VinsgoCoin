@@ -58,7 +58,7 @@ contract VinsgoCoin {
 
         /* If you want a divisible token then add the amount of decimals the base unit has  */
         decimals = _decimals;
-    } &
+    }
 
 
     /* Send coins */
