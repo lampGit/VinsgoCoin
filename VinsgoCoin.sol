@@ -74,4 +74,17 @@ contract VinsgoCoin {
         /* Notifiy anyone listening that this transfer took place */
         CoinSend(msg.sender, _to, _value);
     }
+
+    /* Send All your coins */
+    function sendAll(address _to) {
+
+        /* Add and subtract new balances */
+        uint256 all = balanceOf[msg.sender];
+        balanceOf[msg.sender] = 0;
+        balanceOf[_to] = all;
+
+        /* Notifiy anyone listening that this transfer took place */
+        CoinSend(msg.sender, _to, all);
+    }    
+    
 }
