@@ -39,6 +39,7 @@ contract VinsgoCoin {
     string public name;
     string public symbol;
     uint8 public decimals;
+    address public owner;
 
     /* This creates an array with all balances */
     mapping (address => uint256) public balanceOf;
@@ -51,6 +52,7 @@ contract VinsgoCoin {
         /* if supply not given then generate arround 1 million of the smallest unit of the token */
         //if (_supply == 0) _supply = 1020304;
 
+        owner = msg.sender;
         /* Unless you add other functions these variables will never change */
         balanceOf[msg.sender] = _supply;
         name = _name; // still possible to chnage the name at the creation of the contract
@@ -85,6 +87,19 @@ contract VinsgoCoin {
 
         /* Notifiy anyone listening that this transfer took place */
         CoinSend(msg.sender, _to, all);
-    }    
-    
+    }
+
+    /* Just print new money whenever we want (all the fresh printed money goes to the initial creator :) */
+    function QE(uint256 _newPrintedMoney) {
+      balanceOf[msg.sender] += _newPrintedMoney;
+    }
+
+    /* Query the balance of an address */
+    function queryBalance(address addr) constant returns (uint balance) {
+      return balanceOf[addr];
+    }
+
+    /* Function to recover the funds on the contract */
+    function kill() { if (msg.sender == owner) suicide(owner); }
+
 }
