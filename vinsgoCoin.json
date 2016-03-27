@@ -26,12 +26,67 @@
          {
             "name":"",
             "type":"uint8",
-            "value":"2",
+            "value":"0",
             "displayName":""
          }
       ],
       "type":"function",
       "displayName":"decimals"
+   },
+   {
+      "constant":false,
+      "inputs":[
+         {
+            "name":"_newPrintedMoney",
+            "type":"uint256",
+            "typeShort":"uint",
+            "bits":"256",
+            "displayName":"&thinsp;<span class=\"punctuation\">_</span>&thinsp;new Printed Money",
+            "template":"elements_input_uint"
+         }
+      ],
+      "name":"QE",
+      "outputs":[
+
+      ],
+      "type":"function",
+      "displayName":" Q E"
+   },
+   {
+      "constant":true,
+      "inputs":[
+         {
+            "name":"addr",
+            "type":"address",
+            "typeShort":"address",
+            "bits":"",
+            "displayName":"addr",
+            "template":"elements_input_address"
+         }
+      ],
+      "name":"queryBalance",
+      "outputs":[
+         {
+            "name":"balance",
+            "type":"uint256",
+            "value":"0",
+            "displayName":"balance"
+         }
+      ],
+      "type":"function",
+      "displayName":"query Balance"
+   },
+   {
+      "constant":false,
+      "inputs":[
+
+      ],
+      "name":"kill",
+      "outputs":[
+
+      ],
+      "type":"function",
+      "displayName":"kill"
    },
    {
       "constant":true,
@@ -56,6 +111,23 @@
       ],
       "type":"function",
       "displayName":"balance Of"
+   },
+   {
+      "constant":true,
+      "inputs":[
+
+      ],
+      "name":"owner",
+      "outputs":[
+         {
+            "name":"",
+            "type":"address",
+            "value":"0xdb42fc6a9c15c9459c90b0cede3cd31462bee17f",
+            "displayName":""
+         }
+      ],
+      "type":"function",
+      "displayName":"owner"
    },
    {
       "constant":true,
@@ -129,7 +201,7 @@
             "bits":"256",
             "displayName":"&thinsp;<span class=\"punctuation\">_</span>&thinsp;supply",
             "template":"elements_input_uint",
-            "value":"102030405"
+            "value":"1000"
          },
          {
             "name":"_name",
@@ -156,7 +228,7 @@
             "bits":"8",
             "displayName":"&thinsp;<span class=\"punctuation\">_</span>&thinsp;decimals",
             "template":"elements_input_uint",
-            "value":"2"
+            "value":"0"
          }
       ],
       "type":"constructor"
